@@ -76,60 +76,63 @@
 .slick-next
 	position: absolute
 	top: 50%
-	margin-top: -14px
-	+hide-text
-	height: 50px
+	margin-top: -15px
 	background: none
 	&:focus
 		outline: none
 	&.slick-disabled
 		opacity: 0.2
-	&:before
-		height: 50px
-		line-height: 50px
-.slick-prev
-	left: 0
-	&:before
-		content: "←"
-		display: inline-block
-		vertical-align: middle
-		font-size: 61px
-		color: #fff 
+.slick-prev,
 .slick-next
-	right: 0
+	width: 30px
+	height: 30px
+	background: $red
+	border-radius: 3px
+	+fi
+	color: #fff
+	font-size: 0
+	z-index: 4
 	&:before
-		content: "→"
-		display: inline-block
+		font-size: 16px
 		vertical-align: middle
-		font-size: 61px
-		color: #fff 
+.slick-prev
+	left: -20px
+	&:before
+		content: "\e602"
+.slick-next
+	right: -20px  
+	&:before
+		content: "\e601"
 .slick-dots
-	text-align: center
 	position: absolute
-	margin: 0
 	bottom: 0
 	left: 0
 	right: 0
+	font-size: 0
+	text-align: center
 	li
 		position: relative
 		display: inline-block
-		padding: 0 3px 
+		padding: 0
+		vertical-align: top
 		&.slick-active
 			button
-				opacity: 0.3
-				box-shadow: none
-		&:before
-			display: none 
-				 
+				&:before
+					width: 8px
+					height: 8px
+					border: none
+					background: #000 
 	button
-		display: block
-		width: 6px
-		height: 6px
-		background: #fff
-		+box-shadow(0 1px 5px rgba(0,0,0,.25))
-		cursor: pointer
-		+hide-text
-		border-radius: 50% 
-		&:hover
-			box-shadow: none
+		width: 16px
+		height: 16px
+		background: none 
+		font-size: 0
+		&:before
+			content: ""
+			display: inline-block
+			width: 10px
+			height: 10px
+			border: 2px solid #c0c0c0
+			border-radius: 50%
+			vertical-align: middle
 	
