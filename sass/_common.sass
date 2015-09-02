@@ -67,26 +67,47 @@
 $red: #D5520C
 
 body
+	min-width: 1220px
 	+f
 	font-size: 12px
 	line-height: 1.3
 a
 	text-decoration: none
+input,
+textarea,
+button
+	+f
+	font-size: 12px
 
 // common blocks
 .center
 	width: 1220px
 	margin: 0 auto
 	padding: 0 20px
+	&.center_sm
+		
+
+.l
+	+clr
+
+.aside
+	float: left
+	width: 310px
+
+.section
+	float: right
+	width: 850px
 
 .header
 	position: relative
 	height: 100px
+	margin-bottom: 70px
 	background: #1E1E1E
 	color: #FFF 
 	z-index: 99 
 	.header__in
 		position: relative
+		z-index: 2 
 	.header__right
 		margin-left: 315px
 	.header__links
@@ -105,6 +126,10 @@ a
 			&:first-child
 				&:before
 					display: none
+		.icon-cart
+			position: relative
+			top: 1px
+			margin-left: 2px
 	.header__row
 		+clr
 	.header__nav
@@ -113,28 +138,25 @@ a
 		li
 			display: inline-block
 			margin-right: 40px
+		.icon-chevron-thin-down
+			position: relative
+			top: -1px
+			margin-left: 2px
+			vertical-align: middle
 	.header__search
 		float: right
+		.icon-search
+			position: relative
+			top: 1px
+			margin-right: 8px
 	a
+		display: inline-block
 		text-transform: uppercase
 		color: #FFF
 	.logo
 		position: absolute
 		top: 0
 		left: 135px
-	.icon-cart
-		position: relative
-		top: 1px
-		margin-left: 2px
-	.icon-chevron-thin-down
-		position: relative
-		top: -1px
-		margin-left: 2px
-		vertical-align: middle
-	.icon-search
-		position: relative
-		top: 1px
-		margin-right: 8px
 
 .logo
 	+s(logo)
@@ -142,12 +164,12 @@ a
 .banner
 	position: relative
 	height: 585px
-	margin-bottom: 30px
+	margin: -70px 0 30px
 	background: url(../img/bg-main.jpg) 50% 50% / cover 
 	+vertical
 	&.banner_location
 		height: 360px
-		margin: 0
+		margin: 0 0 -20px
 		background-image: url(../img/bg-location.jpg) 
 	.banner__vertical
 		display: inline-block
@@ -191,9 +213,11 @@ a
 	text-align: center
 	&.title_mb-10
 		margin-bottom: 10px
+	&.title_mb-20
+		margin-bottom: 20px
 	&.title_mb-45
 		margin-bottom: 45px
-	&.title_sl
+	&.title_el
 		margin-bottom: 10px
 		font-size: 14px 
 		letter-spacing: 2px 
@@ -247,14 +271,21 @@ a
 		+gh(rgba(#fff,0), rgba(#fff,1))
 	.sl__item
 		vertical-align: top
-	.sl__link
-		display: block
-		position: relative
+	.slick-dots
+		bottom: -3px
+
+.el
+	display: block
+	position: relative
+	color: #000 
+	&:hover
+		.el__in
+			opacity: 1 
+	&.el_sl
 		margin: 0 6px 12px
-		&:hover
-			.sl__in
-				opacity: 1 
-	.sl__in
+	.el__preview
+		position: relative
+	.el__in
 		position: absolute
 		top: 0
 		left: 0
@@ -263,31 +294,63 @@ a
 		background: rgba(#000,.5)
 		+vertical
 		+gpu
-		opacity: 0 
-	.sl__details
+		opacity: 0
+	.el__pic
+		display: block
+		max-width: 100%
+	.el__details
 		display: inline-block
 		width: 100%
 		padding: 17px 40px 10px
 		vertical-align: middle
 		color: #FFF
-	.sl__text
+	.el__text
 		margin-bottom: 14px
 		font-size: 12px
-	.sl__price
+	.el__price
 		font-size: 14px
+		letter-spacing: 2px
+	.el__info	
+		padding: 14px 20px 0
+		text-align: center
+	.el__title
+		font-size: 14px
+		text-transform: uppercase
 		letter-spacing: 2px 
-	.slick-dots
-		bottom: -3px
+		&:after
+			content: ""
+			display: block
+			width: 43px
+			height: 1px
+			margin: 6px auto 9px
+			background: #000 
+	.el__desc
+		font-size: 13px
+		letter-spacing: 1px 
 
 .articles
 	margin-bottom: 15px
+	font-size: 0
 	+clr
+	&.articles_flip
+		.articles__list
+			float: right
+			width: 540px
+		.articles__big
+			float: left
+			width: 590px
 	.articles__list
 		float: left
 		width: 500px
 	.articles__big
 		float: right
 		width: 555px
+	.articles__item
+		display: inline-block
+		width: 500px
+		vertical-align: top
+		&:nth-child(2n+1)
+			margin-right: 180px
 		
 .article
 	margin-bottom: 65px
@@ -301,6 +364,15 @@ a
 			display: inline
 			margin: 0 10px 0 0
 			font-size: 19px
+	&.article_big_flip
+		box-shadow: -500px 0 0 0 #f3f3f5, -1000px 0 0 0 #f3f3f5
+		.article__pic
+			margin: 0 20px 30px 0
+			text-align: right
+		.article__cell
+			&:last-child
+				padding-right: 20px
+				text-align: left
 	.article__pic
 		margin-bottom: 15px
 		font-size: 0
@@ -341,9 +413,21 @@ a
 	font-size: 10px
 	color: #000
 	white-space: nowrap
+	&.btn_black
+		background: #000
+		border-color: #000
+		color: #FFF  
 
 .tabs
 	margin-bottom: 60px
+	&.tabs_info
+		width: 760px
+		margin: 0 auto
+		.tabs__nav
+			button
+				text-transform: uppercase
+				&.is-active
+					background: #D9D9D9 
 	.tabs__nav
 		margin-bottom: 25px
 		font-size: 0
@@ -353,12 +437,13 @@ a
 			height: 37px
 			margin: 0 4px
 			padding: 0 10px
-			background: none
+			background: transparent 
 			border: 1px solid #ccc
 			font-size: 11px
 			vertical-align: top
 			&.is-active
 				background: #F1F1F1 
+				cursor: default
 
 .slider
 	&:before
@@ -374,11 +459,14 @@ a
 		border-left: 1px solid #e4e4e4
 
 .product
-	padding: 0 37px 22px
+	&.product_sl
+		padding: 0 37px 22px
+		.product__pic
+			height: 162px
 	.product__pic
 		display: block
 		padding: 5px
-		height: 162px
+		height: 270px
 		+vertical
 		img
 			display: inline-block
@@ -441,6 +529,7 @@ a
 	vertical-align: middle
 
 .footer
+	margin-top: 20px
 	background: #000
 	.footer__row
 		display: table
@@ -458,27 +547,293 @@ a
 		a
 			color: #FFF 
 
+.search
+	display: none
+	position: absolute
+	top: 100%
+	left: 0
+	right: 0
+	padding: 25px 0 20px
+	border-top: 1px solid #fff
+	background: url(../img/bg-search.png)
+	color: #000
+	.search__form
+		width: 480px
+		margin: 0 auto 35px
+	.search__row
+		display: table
+		width: 100%
+		padding: 0 50px
+		table-layout: fixed
+	.search__row_head
+		margin-bottom: 10px
+		padding-bottom: 5px
+		border-bottom: 1px dotted #dadada
+	.search__cell
+		display: table-cell
+		padding: 0 15px
+		vertical-align: top
+	.search__btn
+		margin-top: 20px
+		text-align: center
 
+.input
+	width: 100%
+	height: 30px
+	padding: 0 15px
+	border: 1px solid #bfbfbf
+	border-radius: 3px
+	+placeholder-color(#a4a4a4)
+	text-transform: uppercase
+	&.input_simple
+		border: none
+		border-radius: 0
 
+.select
+	position: relative
+	&.is-active
+		.select__head
+			color: #000 
+	&.select_sm
+		.select__head
+			height: 24px
+			line-height: 22px
+	&.select_simple
+		.select__head
+			border: none
+			line-height: 30px
+		&.select_sm
+			.select__head
+				line-height: 24px
+	.select__el
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border: none
+		opacity: 0
+		cursor: pointer
+		z-index: 2 
+	.select__head
+		position: relative
+		height: 30px
+		padding: 0 20px 0 10px
+		background: #fff 
+		border: 1px solid #bfbfbf
+		+text-overflow
+		line-height: 28px
+		color: #A4A4A4
+		text-transform: uppercase
+		&:after
+			content: "\e603"
+			position: absolute
+			top: 0
+			right: 4px
+			+fi
+			font-size: 12px
+			color: #BFBFBF 
 
+.field
+	&.field_search
+		position: relative
+		.input
+			padding-left: 30px
+		.icon
+			position: absolute
+			top: 7px
+			left: 10px
+			font-size: 14px
+			color: #000 
+	.field__in
+		display: block
 
+.category
+	text-transform: uppercase
+	border: 1px solid #f8f8f8
+	border-radius: 3px
+	overflow: hidden
+	.category__head
+		position: relative
+		padding: 22px 32px 22px 12px
+		background: #F8F8F8
+		+fb
+		color: #000
+		cursor: pointer
+		&.is-active
+			&:before
+				display: none
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			background: #000 
+		&:after
+			top: 28px
+			right: 16px
+			width: 10px
+			height: 2px
+		&:before
+			top: 24px
+			right: 20px
+			width: 2px
+			height: 10px
+	.category__list
+		a
+			display: block
+			margin-top: 3px
+			padding: 22px 12px
+			background: #F8F8F8
+			color: #000
+			&.is-active
+				background: #DDD 
 
+.filter
+	margin-bottom: 40px
+	padding: 15px
+	background: #f8f8f8
+	border-radius: 3px
+	+clr
+	.filter__cell
+		float: left
+		width: 215px 
+		margin-right: 10px
+		&:first-child
+			width: 370px
 
+.catalog
+	font-size: 0
+	.catalog__item	
+		display: inline-block
+		width: 25%
+		padding: 0 20px 50px
+		vertical-align: top
 
+.receipts
+	margin: 0 -6px 15px
+	font-size: 0
+	.receipts__item
+		display: inline-block
+		width: 25%
+		padding: 0 6px 25px
+		vertical-align: top
 
+.gallery
+	font-size: 0
+	&.gallery_hot
+		margin: 0 -6px
+		.gallery__item
+			width: 50%
+			padding: 0 6px 12px
+	&.gallery_info
+		margin: 0 -6px
+		.gallery__item
+			width: 25%
+			padding: 0 6px 12px
+	.gallery__item
+		display: inline-block
+		width: 33.33%
+		padding: 0 35px 50px
+		vertical-align: top
+		img
+			max-width: 100%
 
+.hot
+	margin-bottom: 50px
+	+clr
+	.hot__videos
+		float: left
+		width: 585px
+	.hot__gallery
+		float: right
+		width: 552px
 
+.videos
+	.slick-dots
+		top: 5px
+		right: -20px
+		bottom: auto
+		left: auto
+		li
+			display: block
 
+.info
+	margin: -100px 0 -20px
+	.info__product
+		+clr
+	.info__pic
+		float: left
+		width: 240px
+		margin: 0 20px 0 255px
+		font-size: 0
+		text-align: center
+		img
+			max-width: 100%
+	.info__in
+		float: left
+		width: 480px
+	.info__gallery
+		margin-bottom: 7px
+	.info__gallery-title
+		margin-bottom: 5px
+		font-size: 13px
+		letter-spacing: 1px
+	.info__title
+		margin-bottom: 5px
+		font-size: 18px
+	.info__ref
+		margin-bottom: 5px
+		font-size: 14px
+		span
+			&:after
+				content: "|"
+				margin: 0 15px
+	.info__desc
+		margin-bottom: 20px
+		font-size: 13px 
+		line-height: 1.4
+	.info__details
+		position: relative
+		padding: 15px 0 30px
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			bottom: 0
+			right: -185px
+			width: 165px
+			background: #F2F2F2 
+	.info__more
+		padding: 30px 0 40px
+		background: #F2F2F2 
 
+.content
+	font-size: 13px
+	color: #666
+	line-height: 1.7
+	&.content_center
+		text-align: center
 
-
-
-
-
-
-
-
-
+.sort
+	margin-bottom: 45px
+	text-align: center
+	font-size: 0
+	.sort__item
+		display: inline-block
+		&.is-active
+			a
+				color: #D96525
+				cursor: default 
+		&:first-child
+			&:before
+				display: none
+		&:before
+			content: "/"
+			margin: 0 15px
+			font-size: 15px
+		a
+			color: #000 
+			font-size: 15px
 
 
 
