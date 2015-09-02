@@ -60,7 +60,7 @@ head.ready(function() {
 	});
 }());
 
-// search
+// category
 (function () {
 	var btn = $('.js-category');
 	btn.on('click', function () {
@@ -69,6 +69,22 @@ head.ready(function() {
 		_this.next().slideToggle();
 		return false;
 	});
+}());
+
+// fancybox
+(function () {
+	var el = $('.js-fancybox');
+	if (el.length) {
+		el.fancybox({
+			openEffect: 'elastic',
+			closeEffect: 'elastic',
+			helpers: {
+				overlay: {
+					locked: false
+				}
+			}
+		});
+	};
 }());
 	
 });
