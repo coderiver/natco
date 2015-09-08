@@ -39,6 +39,7 @@ input, textarea, button { font-family: "Proxima Nova Regular", Arial, sans-serif
 
 .center { width: 1220px; margin: 0 auto; padding: 0 20px; }
 .center.center_sm { width: 950px; }
+.center.center_receipt { width: 1100px; margin: -100px auto -20px; padding: 120px 70px 70px; box-shadow: 0 0 0 600px #fbfbfb; }
 
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
@@ -269,6 +270,35 @@ input, textarea, button { font-family: "Proxima Nova Regular", Arial, sans-serif
 .sort .sort__item a { color: black; font-size: 15px; }
 
 .preview { margin-bottom: 45px; background: url(../img/bg-search.png); font-size: 0; }
+
+.receipt { *zoom: 1; }
+.receipt:after { content: " "; display: table; clear: both; }
+.receipt .receipt__aside { float: left; width: 210px; margin-right: 40px; }
+.receipt .receipt__content { float: left; width: 430px; margin-right: 40px; }
+.receipt .receipt__other { float: left; width: 240px; }
+.receipt .receipt__pic { font-size: 0; }
+.receipt .receipt__pic-link { margin-bottom: 15px; }
+.receipt .receipt__pic-link a { display: block; padding: 10px 0; border-bottom: 2px solid #e2e2e2; color: black; }
+.receipt .receipt__pic-link .icon { margin-left: 5px; font-size: 14px; vertical-align: middle; }
+.receipt .receipt__time { width: 100%; }
+.receipt .receipt__time td { padding: 0 10px 5px 0; }
+.receipt .receipt__content { font-size: 14px; }
+.receipt .receipt__content h1, .receipt .receipt__content h2, .receipt .receipt__content h3, .receipt .receipt__content h4, .receipt .receipt__content h5, .receipt .receipt__content h6 { margin-bottom: 15px; font-weight: 400; }
+.receipt .receipt__content h1 { font-size: 26px; }
+.receipt .receipt__content h2 { font-size: 24px; }
+.receipt .receipt__content h3 { font-size: 22px; }
+.receipt .receipt__content h4 { font-size: 20px; }
+.receipt .receipt__content h5 { font-size: 18px; }
+.receipt .receipt__content h6 { font-size: 16px; }
+.receipt .receipt__content p, .receipt .receipt__content li { margin-bottom: 15px; }
+.receipt .receipt__content strong, .receipt .receipt__content b { font-weight: 400; }
+.receipt .receipt__content em, .receipt .receipt__content i { font-family: "Droid Serif Itallic", Arial, sans-serif; }
+.receipt .receipt__content ol { counter-reset: list; }
+.receipt .receipt__content ol li:before { counter-increment: list; content: counter(list) ". "; }
+.receipt .receipt__item { display: block; margin-bottom: 30px; color: black; }
+.receipt .receipt__item-pic { margin-bottom: 5px; font-size: 0; }
+.receipt .receipt__item-title { margin-bottom: 5px; font-size: 22px; }
+.receipt .receipt__item-text { font-size: 14px; }
 
 .fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner, .fancybox-image { padding: 0; margin: 0; border: 0; outline: none; vertical-align: top; }
 

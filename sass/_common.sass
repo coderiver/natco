@@ -86,6 +86,11 @@ button
 	padding: 0 20px
 	&.center_sm
 		width: 950px
+	&.center_receipt
+		width: 1100px
+		margin: -100px auto -20px
+		padding: 120px 70px 70px
+		box-shadow: 0 0 0 600px #fbfbfb
 
 .l
 	+clr
@@ -871,6 +876,87 @@ button
 	margin-bottom: 45px
 	background: url(../img/bg-search.png)
 	font-size: 0
+	
+.receipt
+	+clr
+	.receipt__aside
+		float: left
+		width: 210px
+		margin-right: 40px
+	.receipt__content
+		float: left
+		width: 430px
+		margin-right: 40px
+	.receipt__other
+		float: left
+		width: 240px
+	.receipt__pic
+		font-size: 0
+	.receipt__pic-link
+		margin-bottom: 15px
+		a
+			display: block
+			padding: 10px 0
+			border-bottom: 2px solid #e2e2e2 
+			color: #000
+		.icon
+			margin-left: 5px
+			font-size: 14px
+			vertical-align: middle
+	.receipt__time
+		width: 100%
+		td
+			padding: 0 10px 5px 0
+	.receipt__content
+		font-size: 14px
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6
+			margin-bottom: 15px
+			font-weight: 400
+		h1
+			font-size: 26px
+		h2
+			font-size: 24px
+		h3
+			font-size: 22px
+		h4
+			font-size: 20px
+		h5
+			font-size: 18px
+		h6
+			font-size: 16px
+		p,
+		li
+			margin-bottom: 15px
+		strong,
+		b
+			font-weight: 400
+		em,
+		i
+			+fd
+		ol
+			counter-reset: list
+			li
+				&:before
+					counter-increment: list
+					content: counter(list) ". "
+	.receipt__item 
+		display: block
+		margin-bottom: 30px
+		color: #000
+	.receipt__item-pic
+		margin-bottom: 5px
+		font-size: 0
+	.receipt__item-title
+		margin-bottom: 5px
+		font-size: 22px
+	.receipt__item-text
+		font-size: 14px
+	
 
 //! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license
 
